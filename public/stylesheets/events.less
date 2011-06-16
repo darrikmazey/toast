@@ -1,14 +1,10 @@
 
 @import "palette";
 
-@payment_background_color: #D9FFA9;
-@charge_background_color: #D2E4FC;
-@debt_background_color: #FF9999;
-@note_background_color: #FFD0D4;
-@phone_call_background_color: #F0D878;
+@exists_scraper_background_color: #D9FFA9;
+@dne_scraper_background_color: #FFD9A9;
 
-.debt.general_debt,
-.event {
+.object {
 	padding: 10px;
 	border: 1px solid @section_border_color;
 	border-top-left-radius: 4px 4px;
@@ -18,104 +14,45 @@
 	margin-bottom: 5px;
 }
 
-.debt .type,
-.event .type {
+.object .type {
 	width: 6%;
 	display: inline-block;
 	font-size: 1.6em;
 }
 
-.debt .brief_content,
-.event .brief_content {
+.object .brief_content {
 	display: inline-block;
 	margin-left: 5px;
 }
 
-.debt .brief_content .field,
-.event .brief_content .field {
+.object .brief_content .field {
 	display: inline-block;
 	margin-left: 15px;
 	font-size: 1.3em;
 }
 
-.debt .long_content,
-.event .long_content {
+.object .long_content {
 	margin-top: 5px;
 	display: none;
 }
 
-.event.charge {
-	background-color: @charge_background_color;
-}
-
-.event.payment {
-	background-color: @payment_background_color;
-}
-
-.event.note {
-	background-color: @note_background_color;
-}
-
-.event.phone_call {
-	background-color: @phone_call_background_color;
-}
-
-.event .long_content .content {
+.object .long_content .content {
 	margin-top: 5px;
 }
 
-.debt.general_debt {
-	background-color: @debt_background_color;
-}
-
-.debt .field.name,
-.event .field.name {
+.object .field.name {
 	display: inline-block;
 	font-weight: bold;
 }
 
-.debt .field.value,
-.event .field.value {
+.object .field.value {
 	display: inline-block;
 }
 
-.form.new_phone_call {
-	background-color: @phone_call_background_color;
+.object.scraper.dne {
+	background-color: @dne_scraper_background_color;
 }
 
-.form.new_note {
-	background-color: @note_background_color;
+.object.scraper.exists {
+	background-color: @exists_scraper_background_color;
 }
-
-.form.new_payment {
-	background-color: @payment_background_color;
-}
-
-.form.new_charge {
-	background-color: @charge_background_color;
-}
-
-.form.new_debt {
-	background-color: @debt_background_color;
-}
-
-.section.links .link.payment {
-	background-color: @payment_background_color;
-}
-
-.section.links .link.charge {
-	background-color: @charge_background_color;
-}
-
-.section.links .link.debt {
-	background-color: @debt_background_color;
-}
-
-.section.links .link.note {
-	background-color: @note_background_color;
-}
-
-.section.links .link.phone_call {
-	background-color: @phone_call_background_color;
-}
-

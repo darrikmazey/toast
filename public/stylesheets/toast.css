@@ -121,7 +121,7 @@ div.form {
   display: inline-block;
   padding: 5px;
 }
-.debt.general_debt, .event {
+.object {
   padding: 10px;
   border: 1px solid #222d31;
   border-top-left-radius: 4px 4px;
@@ -130,68 +130,32 @@ div.form {
   border-bottom-right-radius: 4px 4px;
   margin-bottom: 5px;
 }
-.debt .type {
+.object .type {
   width: 6%;
   display: inline-block;
   font-size: 1.6em;
 }
-.event .type {
-  width: 6%;
-  display: inline-block;
-  font-size: 1.6em;
-}
-.debt .brief_content {
+.object .brief_content {
   display: inline-block;
   margin-left: 5px;
 }
-.event .brief_content {
-  display: inline-block;
-  margin-left: 5px;
-}
-.debt .brief_content .field {
+.object .brief_content .field {
   display: inline-block;
   margin-left: 15px;
   font-size: 1.3em;
 }
-.event .brief_content .field {
-  display: inline-block;
-  margin-left: 15px;
-  font-size: 1.3em;
-}
-.debt .long_content {
+.object .long_content {
   margin-top: 5px;
   display: none;
 }
-.event .long_content {
-  margin-top: 5px;
-  display: none;
-}
-.event.charge { background-color: #d2e4fc; }
-.event.payment { background-color: #d9ffa9; }
-.event.note { background-color: #ffd0d4; }
-.event.phone_call { background-color: #f0d878; }
-.event .long_content .content { margin-top: 5px; }
-.debt.general_debt { background-color: #ff9999; }
-.debt .field.name {
+.object .long_content .content { margin-top: 5px; }
+.object .field.name {
   display: inline-block;
   font-weight: bold;
 }
-.event .field.name {
-  display: inline-block;
-  font-weight: bold;
-}
-.debt .field.value { display: inline-block; }
-.event .field.value { display: inline-block; }
-.form.new_phone_call { background-color: #f0d878; }
-.form.new_note { background-color: #ffd0d4; }
-.form.new_payment { background-color: #d9ffa9; }
-.form.new_charge { background-color: #d2e4fc; }
-.form.new_debt { background-color: #ff9999; }
-.section.links .link.payment { background-color: #d9ffa9; }
-.section.links .link.charge { background-color: #d2e4fc; }
-.section.links .link.debt { background-color: #ff9999; }
-.section.links .link.note { background-color: #ffd0d4; }
-.section.links .link.phone_call { background-color: #f0d878; }
+.object .field.value { display: inline-block; }
+.object.scraper.dne { background-color: #ffd9a9; }
+.object.scraper.exists { background-color: #d9ffa9; }
 a {
   text-decoration: none;
   color: #5a584b;

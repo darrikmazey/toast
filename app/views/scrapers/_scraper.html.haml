@@ -1,4 +1,10 @@
-.scraper
+.object.scraper{:id => "scraper_#{scraper.id}", :class => scraper.exists? ? 'exists' : 'dne', :onClick => "$('#scraper_#{scraper.id} .long_content').toggle();" }
 	.brief_content
 		.field
 			= scraper.name
+	.long_content
+		- if !scraper.exists?
+			.field
+				.field.name Error
+				.field.value
+					= "File does not exist: #{scraper.filename}"

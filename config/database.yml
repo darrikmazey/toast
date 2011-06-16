@@ -9,10 +9,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: io_development
+  database: toast_development
   pool: 5
-  username: io
-  password: Gephe-i9ae
+  username: toast
+  password: ed5Eo$taTh
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -22,18 +22,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: io_test
+  database: toast_test
   pool: 5
-  username: io
-  password: Gephe-i9ae
+  username: toast
+  password: ed5Eo$taTh
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: io_production
+  database: toast_production
   pool: 5
-  username: io
-  password: Gephe-i9ae
+  username: toast
+  password: ed5Eo$taTh
   socket: /var/run/mysqld/mysqld.sock

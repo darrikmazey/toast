@@ -10,7 +10,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616200610) do
+ActiveRecord::Schema.define(:version => 20110617043209) do
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "pages", :force => true do |t|
+    t.string   "url"
+    t.integer  "scraper_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "found_at"
+    t.datetime "scrape_started_at"
+    t.datetime "scrape_ended_at"
+  end
+
+  create_table "parameters", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.integer  "scraper_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "postings", :force => true do |t|
+    t.integer  "scraper_id"
+    t.boolean  "loaded"
+    t.string   "url"
+    t.string   "brief_content"
+    t.string   "poster"
+    t.string   "email"
+    t.datetime "posted_at"
+    t.text     "long_content"
+    t.string   "posting_id"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "scrapers", :force => true do |t|
     t.string   "name"

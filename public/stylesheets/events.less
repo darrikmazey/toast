@@ -25,6 +25,10 @@
 	margin-left: 5px;
 }
 
+.object .brief_content .field.link {
+	font-size: 0.8em;
+}
+
 .object .brief_content .field {
 	display: inline-block;
 	margin-left: 15px;
@@ -49,10 +53,17 @@
 	display: inline-block;
 }
 
+.object.posting.not_loaded,
 .object.scraper.dne {
 	background-color: @dne_scraper_background_color;
 }
 
-.object.scraper.exists {
+.object.posting .field.description .field.value {
+	padding: 10px;
+	border: 1px solid @section_border_color;
+	background-color: #fff;
+}
+
+.object {
 	background-color: @exists_scraper_background_color;
 }

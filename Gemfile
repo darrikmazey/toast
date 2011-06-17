@@ -6,12 +6,14 @@ gem 'haml', '3.0.24'
 gem 'will_paginate', '~> 3.0.pre2'
 gem 'formtastic', '~> 1.1.0'
 gem 'racc'
+gem 'delayed_job'
+gem 'nokogiri', '1.4.4'
 
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '0.2.6'
+gem 'mysql2', '0.2.7'
 
 # Use unicorn as the web server
 gem 'unicorn'

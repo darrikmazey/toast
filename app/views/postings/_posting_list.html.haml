@@ -1,0 +1,10 @@
+
+.section.postings
+	.heading
+		- if @scraper
+			= "postings for #{@scraper.name} (#{@total_postings})"
+		- elsif @page
+			= "postings for #{@page.url} (#{@total_postings})"
+		- else
+			= "postings (#{@total_postings})"
+	= render :partial => 'posting', :collection => postings

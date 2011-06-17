@@ -5,6 +5,10 @@
 		- if user_signed_in?
 			.link
 				= link_to 'Scrapers', scrapers_url
+			.link
+				= link_to 'Pages', pages_url
+			.link
+				= link_to 'Postings', postings_url
 	%div.user_navigation.sub_navigation
 		%div.link
 			- if user_signed_in?

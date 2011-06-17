@@ -1,0 +1,7 @@
+.section.pages
+	.heading
+		- if @scraper
+			= "Pages for #{@scraper.name} (#{pages.count})"
+		- else
+			= "Pages (#{pages.count})"
+	= render :partial => 'page', :collection => pages

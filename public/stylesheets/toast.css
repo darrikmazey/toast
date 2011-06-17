@@ -139,6 +139,7 @@ div.form {
   display: inline-block;
   margin-left: 5px;
 }
+.object .brief_content .field.link { font-size: 0.8em; }
 .object .brief_content .field {
   display: inline-block;
   margin-left: 15px;
@@ -154,8 +155,13 @@ div.form {
   font-weight: bold;
 }
 .object .field.value { display: inline-block; }
-.object.scraper.dne { background-color: #ffd9a9; }
-.object.scraper.exists { background-color: #d9ffa9; }
+.object.posting.not_loaded, .object.scraper.dne { background-color: #ffd9a9; }
+.object.posting .field.description .field.value {
+  padding: 10px;
+  border: 1px solid #222d31;
+  background-color: #ffffff;
+}
+.object { background-color: #d9ffa9; }
 a {
   text-decoration: none;
   color: #5a584b;

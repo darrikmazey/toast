@@ -1,0 +1,19 @@
+.object.page{:id => "page_#{page.id}", :onClick => "$('#page_#{page.id} .long_content').toggle();" }
+	.brief_content
+		.field
+			= page.url
+		.field.link
+			= link_to "postings (#{page.postings.count})", page_postings_url(page)
+	.long_content
+		.field
+			.field.name Found
+			.field.value
+				= page.found_at
+		.field
+			.field.name Started
+			.field.value
+				= page.scrape_started_at
+		.field
+			.field.name Ended
+			.field.value
+				= page.scrape_ended_at

@@ -1,7 +1,21 @@
 Tm::Application.routes.draw do
   devise_for :users
 
-	resources :scrapers
+	resources :scrapers do
+		member do
+			post 'find_pages'
+		end
+
+		resources :pages
+		resources :parameters
+		resources :postings
+	end
+
+	resources :pages do
+		resources :postings
+	end
+
+	resources :postings
 
 #	namespace :user do
 #		root :to => "transactions#index"

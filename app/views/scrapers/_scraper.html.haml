@@ -1,7 +1,15 @@
 .object.scraper{:id => "scraper_#{scraper.id}", :class => scraper.exists? ? 'exists' : 'dne', :onClick => "$('#scraper_#{scraper.id} .long_content').toggle();" }
 	.brief_content
 		.field
-			= scraper.name
+			= link_to scraper.name, scraper_pages_url(scraper)
+		.field.link
+			= link_to 'find pages', find_pages_scraper_url(scraper), :method => :post
+		.field.link
+			= link_to 'parameters', scraper_parameters_url(scraper)
+		.field.link
+			= link_to "pages (#{scraper.pages.count})", scraper_pages_url(scraper)
+		.field.link
+			= link_to "postings (#{scraper.postings.count})", scraper_postings_url(scraper)
 	.long_content
 		- if !scraper.exists?
 			.field

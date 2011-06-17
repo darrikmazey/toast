@@ -1,0 +1,7 @@
+.section.parameters
+	.heading
+		- if @scraper
+			= "Parameters for #{@scraper.name}"
+		- else
+			= "Parameters"
+	= render :partial => 'parameter', :collection => parameters

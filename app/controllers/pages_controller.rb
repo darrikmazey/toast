@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
 	def index
 		if !@scraper.nil?
-			@pages = @scraper.pages
+			@pages = @scraper.pages.order('scrape_ended_at asc, id asc')
 		else
 			@pages = Page.all
 		end

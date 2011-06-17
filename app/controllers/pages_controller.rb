@@ -4,9 +4,9 @@ class PagesController < ApplicationController
 
 	def index
 		if !@scraper.nil?
-			@pages = @scraper.pages.order('scrape_ended_at asc, id asc')
+			@pages = @scraper.pages.order('scrape_ended_at asc, id asc').paginate(:per_page => 25, :page => params[:page])
 		else
-			@pages = Page.all
+			@pages = Page.all.paginate(:per_page => 25, :page => params[:page])
 		end
 	end
 

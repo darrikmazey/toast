@@ -1,4 +1,4 @@
-set :application, "io"
+set :application, "toast"
 set :repository,  "git.darmasoft.net:/git/#{application}"
 
 set :deploy_to, "/var/www/#{application}"
@@ -10,9 +10,9 @@ ssh_options[:keys] = ['~/.ssh/deploy.darmasoft.com-id_rsa']
 set :scm_username, 'git'
 set :user, 'deploy'
 
-role :web, "io.darmasoft.net"                          # Your HTTP server, Apache/etc
-role :app, "io.darmasoft.net"                          # This may be the same as your `Web` server
-role :db,  "io.darmasoft.net", :primary => true # This is where Rails migrations will run
+role :web, "toast.darmasoft.net"                          # Your HTTP server, Apache/etc
+role :app, "toast.darmasoft.net"                          # This may be the same as your `Web` server
+role :db,  "toast.darmasoft.net", :primary => true # This is where Rails migrations will run
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need

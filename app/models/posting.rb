@@ -3,6 +3,7 @@ class Posting < ActiveRecord::Base
   belongs_to :page
 
 	scope :unloaded, { :conditions => { :loaded => false } }
+	scope :are_loaded, { :conditions => { :loaded => true } }
 
 	def fetch
 		@doc = Nokogiri::HTML(open(self.url)) unless @doc

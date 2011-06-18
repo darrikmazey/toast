@@ -9,6 +9,8 @@
 			= t.to_s
 			- if t.relevant_object
 				= t.relevant_object.url
+		.field.link
+			= link_to_function "cancel", "destroy_task(#{task.id});"
 	.long_content
 		- if !task.last_error.nil?
 			.field.error

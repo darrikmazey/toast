@@ -1,7 +1,11 @@
 Tm::Application.routes.draw do
   devise_for :users
 
-	resources :tasks
+	resources :tasks do
+		member do
+			delete 'destroy'
+		end
+	end
 
 	resources :scrapers do
 		member do

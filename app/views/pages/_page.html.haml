@@ -10,12 +10,13 @@
 		.field
 			.field.name Found
 			.field.value
-				= page.found_at
+				= page.found_at.localtime.strftime("%Y.%m.%d %H:%M:%S") rescue ""
 		.field
 			.field.name Started
 			.field.value
-				= page.scrape_started_at
+				= page.scrape_started_at.localtime.strftime("%Y.%m.%d %H:%M:%S") rescue ""
 		.field
 			.field.name Ended
 			.field.value
-				= page.scrape_ended_at
+				= page.scrape_ended_at.localtime.strftime("%Y.%m.%d %H:%M:%S") rescue ""
+

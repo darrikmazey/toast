@@ -8,11 +8,20 @@ Tm::Application.routes.draw do
 
 		resources :pages
 		resources :parameters
-		resources :postings
+
+		resources :postings do
+			collection do
+				get 'all_new'
+			end
+		end
 	end
 
 	resources :pages do
-		resources :postings
+		resources :postings do
+			collection do
+				get 'all_new'
+			end
+		end
 	end
 
 	resources :postings

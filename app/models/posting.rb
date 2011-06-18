@@ -4,6 +4,7 @@ class Posting < ActiveRecord::Base
 
 	scope :unloaded, { :conditions => { :loaded => false } }
 	scope :are_loaded, { :conditions => { :loaded => true } }
+	scope :are_new, { :conditions => { :new => true } }
 
 	def fetch
 		@doc = Nokogiri::HTML(open(self.url)) unless @doc

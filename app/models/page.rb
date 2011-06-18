@@ -16,6 +16,7 @@ class Page < ActiveRecord::Base
 	end
 
 	def start_scrape!
+		self.postings.update_all({:new => false})
 		self.scrape_started_at = DateTime.now
 		self.scrape_ended_at = nil
 		self.save

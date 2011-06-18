@@ -1,6 +1,8 @@
 
 @import "palette";
 
+@object_background_color: #D9FFA9;
+@new_object_background_color: #D2E4FC;
 @exists_scraper_background_color: #D9FFA9;
 @dne_scraper_background_color: #FFD9A9;
 
@@ -65,5 +67,9 @@
 }
 
 .object {
-	background-color: @exists_scraper_background_color;
+	background-color: @object_background_color;
+}
+
+.object.new {
+	background-color: @new_object_background_color;
 }

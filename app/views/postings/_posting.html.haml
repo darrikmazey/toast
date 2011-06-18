@@ -1,4 +1,4 @@
-.object.posting{:class => posting.loaded? ? 'loaded' : 'not_loaded', :id => "posting_#{posting.id}", :onClick => "$('#posting_#{posting.id} .long_content').toggle();" }
+.object.posting{:class => [posting.loaded? ? 'loaded' : 'not_loaded', posting.new? ? 'new' : ''], :id => "posting_#{posting.id}", :onClick => "$('#posting_#{posting.id} .long_content').toggle();" }
 	.brief_content
 		.field
 			= posting.formatted_posted_at

@@ -1,6 +1,6 @@
 class PostingsController < ApplicationController
-	before_filter :load_scraper, :only => [:index]
-	before_filter :load_page, :only => [:index]
+	before_filter :load_scraper, :only => [:index, :all_new]
+	before_filter :load_page, :only => [:index, :all_new]
 
 	def index
 		if @page
@@ -13,6 +13,20 @@ class PostingsController < ApplicationController
 			@total_postings = Posting.order('posted_at desc').count
 			@postings = Posting.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
 		end
+	end
+
+	def all_new
+		if @page
+			@total_postings = @page.postings.are_new.order('posted_at desc').count
+			@postings = @page.postings.are_new.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
+		elsif @scraper
+			@total_postings = @scraper.postings.are_new.order('posted_at desc').count
+			@postings = @scraper.postings.are_new.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
+		else
+			@total_postings = Posting.are_new.order('posted_at desc').count
+			@postings = Posting.are_new.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
+		end
+		render :action => :index
 	end
 
 	private

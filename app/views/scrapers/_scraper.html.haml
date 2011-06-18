@@ -10,6 +10,8 @@
 			= link_to "pages (#{scraper.pages.count})", scraper_pages_url(scraper)
 		.field.link
 			= link_to "postings (#{scraper.postings.count} / #{scraper.postings.unloaded.count} / #{scraper.postings.are_loaded.count})", scraper_postings_url(scraper)
+		.field.link
+			= link_to "new (#{scraper.postings.are_new.count})", all_new_scraper_postings_url(scraper)
 	.long_content
 		- if !scraper.exists?
 			.field

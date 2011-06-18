@@ -162,6 +162,7 @@ div.form {
   background-color: #ffffff;
 }
 .object { background-color: #d9ffa9; }
+.object.new { background-color: #d2e4fc; }
 a {
   text-decoration: none;
   color: #5a584b;

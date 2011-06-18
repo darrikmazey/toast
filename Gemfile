@@ -8,6 +8,7 @@ gem 'formtastic', '~> 1.1.0'
 gem 'racc'
 gem 'delayed_job'
 gem 'nokogiri', '1.4.4'
+gem 'thinking-sphinx', '2.0.3'
 
 
 # Bundle edge Rails instead:

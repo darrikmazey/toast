@@ -2,6 +2,7 @@
 load 'config/deploy/unicorn'
 load 'config/deploy/release'
 load 'config/deploy/delayed_job'
+load 'config/deploy/thinking_sphinx'
 require 'bundler/capistrano'
 
 namespace :deploy do

@@ -5,6 +5,8 @@ class PagesController < ApplicationController
 	def index
 		if !@scraper.nil?
 			@pages = @scraper.pages.order('scrape_ended_at asc, id asc').paginate(:per_page => 25, :page => params[:page])
+		elsif params[:search]
+			@pages = Page.where("url like '%#{params[:search]}%'").order('scrape_ended_at asc, id asc').paginate(:per_page => 25, :page => params[:page])
 		else
 			@pages = Page.order('scrape_ended_at asc, id asc').paginate(:per_page => 25, :page => params[:page])
 		end

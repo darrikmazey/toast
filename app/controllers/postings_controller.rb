@@ -3,7 +3,10 @@ class PostingsController < ApplicationController
 	before_filter :load_page, :only => [:index, :all_new]
 
 	def index
-		if @page
+		if params[:search]
+			@postings = Posting.search(params[:search], :order => :posted_at, :sort_mode => :desc, :match_mode => :boolean, :per_page => 25, :page => params[:page])
+			@total_postings = @postings.total_entries
+		elsif @page
 			@total_postings = @page.postings.not_ignored.order('posted_at desc').count
 			@postings = @page.postings.not_ignored.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
 		elsif @scraper

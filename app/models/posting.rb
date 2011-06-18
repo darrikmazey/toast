@@ -7,6 +7,13 @@ class Posting < ActiveRecord::Base
 	scope :are_new, { :conditions => { :new => true } }
 	scope :not_ignored, { :conditions =>  { :ignored => false } }
 
+	define_index do
+		indexes :brief_content
+		indexes :long_content
+
+		has :posted_at
+	end
+
 	def fetch
 		@doc = Nokogiri::HTML(open(self.url)) unless @doc
 	end

@@ -12,6 +12,7 @@ class Posting < ActiveRecord::Base
 		indexes :long_content
 
 		has :posted_at
+		has :ignored
 	end
 
 	def fetch

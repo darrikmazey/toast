@@ -6,6 +6,13 @@ class Page < ActiveRecord::Base
 
 	before_create :set_found_at
 
+	define_index do
+		indexes :url
+
+		has :scrape_started_at
+		has :scrape_ended_at
+	end
+
 	def fetch
 		@doc = Nokogiri::HTML(open(self.url)) unless @doc
 	end

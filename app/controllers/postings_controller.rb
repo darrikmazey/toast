@@ -4,7 +4,7 @@ class PostingsController < ApplicationController
 
 	def index
 		if params[:search]
-			@postings = Posting.search(params[:search], :order => :posted_at, :sort_mode => :desc, :match_mode => :boolean, :per_page => 25, :page => params[:page])
+			@postings = Posting.search(params[:search], :with => {:ignored => 0}, :order => :posted_at, :sort_mode => :desc, :match_mode => :boolean, :per_page => 25, :page => params[:page])
 			@total_postings = @postings.total_entries
 		elsif @page
 			@total_postings = @page.postings.not_ignored.order('posted_at desc').count

@@ -4,14 +4,14 @@ class PostingsController < ApplicationController
 
 	def index
 		if @page
-			@total_postings = @page.postings.order('posted_at desc').count
-			@postings = @page.postings.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
+			@total_postings = @page.postings.not_ignored.order('posted_at desc').count
+			@postings = @page.postings.not_ignored.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
 		elsif @scraper
-			@total_postings = @scraper.postings.order('posted_at desc').count
-			@postings = @scraper.postings.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
+			@total_postings = @scraper.postings.not_ignored.order('posted_at desc').count
+			@postings = @scraper.postings.not_ignored.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
 		else
-			@total_postings = Posting.order('posted_at desc').count
-			@postings = Posting.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
+			@total_postings = Posting.not_ignored.order('posted_at desc').count
+			@postings = Posting.not_ignored.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
 		end
 	end
 
@@ -27,6 +27,14 @@ class PostingsController < ApplicationController
 			@postings = Posting.are_new.order('posted_at desc').paginate(:per_page => 25, :page => params[:page])
 		end
 		render :action => :index
+	end
+
+	def ignore
+		@posting = Posting.find(params[:id])
+		@posting.ignored = true
+		@posting.new = false
+		@posting.save
+		redirect_to postings_url
 	end
 
 	private

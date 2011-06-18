@@ -3,7 +3,7 @@
 		.field
 			= page.url
 		.field.link
-			= link_to "postings (#{page.postings.count})", page_postings_url(page)
+			= link_to "postings (#{page.postings.not_ignored.count})", page_postings_url(page)
 		.field.link
 			= link_to "new (#{page.postings.are_new.count})", all_new_page_postings_url(page)
 	.long_content

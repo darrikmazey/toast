@@ -30,7 +30,11 @@ Tm::Application.routes.draw do
 		end
 	end
 
-	resources :postings
+	resources :postings do
+		member do
+			post 'ignore'
+		end
+	end
 
 #	namespace :user do
 #		root :to => "transactions#index"

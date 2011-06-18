@@ -4,6 +4,8 @@
 			= posting.formatted_posted_at
 		.field
 			= posting.brief_content
+		.field.link
+			= link_to_function "ignore", "ignore_posting(#{posting.id});"
 	.long_content
 		.field
 			.field.name Url

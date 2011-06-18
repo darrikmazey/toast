@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110618062005) do
+ActiveRecord::Schema.define(:version => 20110618074934) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -62,8 +62,10 @@ ActiveRecord::Schema.define(:version => 20110618062005) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "new",           :default => true
+    t.boolean  "ignored",       :default => false
   end
 
+  add_index "postings", ["ignored"], :name => "ignored_index"
   add_index "postings", ["loaded"], :name => "loaded_index"
   add_index "postings", ["new"], :name => "new_index"
   add_index "postings", ["page_id"], :name => "page_id_index"

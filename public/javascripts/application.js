@@ -14,3 +14,16 @@ function destroy_task(tid) {
 
 	return false;
 };
+
+function ignore_posting(pid) {
+	$.ajax({
+		type: "POST",
+		url: '/postings/' + pid + '/ignore',
+		cache: false,
+		success: function(){
+			$('#posting_' + pid).slideUp('slow', function() {$(this).remove();});
+		}
+	});
+
+	return false;
+};

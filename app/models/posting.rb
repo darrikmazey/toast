@@ -13,6 +13,9 @@ class Posting < ActiveRecord::Base
 
 		has :posted_at
 		has :ignored
+		has :scraper_id
+		has :page_id
+		has :new
 	end
 
 	def fetch

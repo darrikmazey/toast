@@ -98,7 +98,7 @@ class Craigslist
 				doc = page.doc
 				doc.css('p a').each do |link|
 					url = link.attributes["href"].value
-					if Posting.find_by_url(url).nil?
+					if Posting.find_by_url(url).nil? and url =~ /^http/
 						post = Posting.new
 						post.page = p
 						post.scraper = scraper

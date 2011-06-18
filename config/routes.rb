@@ -1,6 +1,8 @@
 Tm::Application.routes.draw do
   devise_for :users
 
+	resources :tasks
+
 	resources :scrapers do
 		member do
 			post 'find_pages'

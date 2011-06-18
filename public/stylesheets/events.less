@@ -5,6 +5,7 @@
 @new_object_background_color: #D2E4FC;
 @exists_scraper_background_color: #D9FFA9;
 @dne_scraper_background_color: #FFD9A9;
+@error_task_background_color: #FFD9A9;
 
 .object {
 	padding: 10px;
@@ -60,6 +61,7 @@
 	background-color: @dne_scraper_background_color;
 }
 
+.object.task .field.error .field.value,
 .object.posting .field.description .field.value {
 	padding: 10px;
 	border: 1px solid @section_border_color;
@@ -72,4 +74,8 @@
 
 .object.new {
 	background-color: @new_object_background_color;
+}
+
+.task.error {
+	background-color: @error_task_background_color;
 }

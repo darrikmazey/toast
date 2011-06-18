@@ -1,0 +1,18 @@
+- t = Task.new(task)
+.object.task{:id => "task_#{task.id}", :class => task.last_error.nil? ? '' : 'error', :onClick => "$('#task_#{task.id} .long_content').toggle();" }
+	.brief_content
+		.field
+			= t.formatted_run_at
+		.field
+			= "(#{t.retries})"
+		.field
+			= t.to_s
+			- if t.relevant_object
+				= t.relevant_object.url
+	.long_content
+		- if !task.last_error.nil?
+			.field.error
+				.field.name Last Error
+				.field.value
+					=raw t.error_html
+

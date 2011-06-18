@@ -1,6 +1,7 @@
 
 load 'config/deploy/unicorn'
 load 'config/deploy/release'
+load 'config/deploy/delayed_job'
 require 'bundler/capistrano'
 
 namespace :deploy do
